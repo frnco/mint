@@ -102,6 +102,10 @@ module Math {
     `Number((#{a} - (Math.floor(#{a} / #{b}) * #{b})).toPrecision(8))`
   }
 
+  fun trunc (number : Number) {
+    `Math.trunc(#{number})`
+  }
+
   /*
   Truncates the given number to the given amount.
 

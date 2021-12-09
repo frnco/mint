@@ -311,4 +311,16 @@ module String {
   ) : String {
     `#{string}.replace(#{includeEmptyLines} ? /^/gm : /^(?!\s*$)/gm, #{repeat(by, character)})`
   }
+
+  fun padLeft (
+    padString : String,
+    targetLength : Number,
+    string : String
+  ) : String {
+    `#{string}.padStart(#{targetLength}, #{padString})`
+  }
+
+  fun takeRight (length : Number, string : String) : String {
+    `#{string}.slice(#{string}.length - #{length},#{string}.length)`
+  }
 }
