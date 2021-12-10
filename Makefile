@@ -38,5 +38,5 @@ documentation:
 	rm -rf docs && crystal docs
 
 # This builds the binary and depends on files in "src" and "core" directories.
-bin/mint: $(shell find src -type f) $(shell find core -type f)
+bin/mint: $(shell find src -type f) $(shell find core/source -type f)
 	shards build --error-on-warnings --error-trace --progress
