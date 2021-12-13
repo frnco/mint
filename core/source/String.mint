@@ -321,6 +321,6 @@ module String {
   }
 
   fun takeRight (length : Number, string : String) : String {
-    `#{string}.slice(#{string}.length - #{length},#{string}.length)`
+    `#{string}.slice(#{string}.length - #{length}, #{string}.length)`
   }
 }
