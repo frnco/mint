@@ -146,7 +146,7 @@ module Time {
   }
 
   /*
-  Returns the quarterOfYear of the year in which the given time occurs.
+  Returns the quarter of the year in which the given time occurs.
 
     Time.quarterOfYear(Time.utcDate(2018, 4, 5)) == 1
   */
@@ -260,8 +260,8 @@ module Time {
   fun dayOfWeekNumber (time : Time) : Number {
     `
     (() => {
-      const _ = #{time}.getUTCDay()
-      return _ === 0 ? 7 : _;
+      const dayNumber = #{time}.getUTCDay()
+      return dayNumber === 0 ? 7 : dayNumber;
     })()
     `
   }
@@ -375,7 +375,7 @@ module Time {
           Time.Span::Milliseconds(amount) =>
             `time.setUTCMilliseconds(time.getUTCMilliseconds() + #{amount})`
 
-          Time.Span::Seconds(amount)      =>
+          Time.Span::Seconds(amount) =>
             `time.setUTCSeconds(time.getUTCSeconds() + #{amount})`
 
           Time.Span::Minutes(amount)      =>
